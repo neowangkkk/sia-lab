@@ -1,0 +1,9 @@
+{
+  "key": "placeholder2025",
+  "title": "Placeholder Publication Title",
+  "authors": ["Tao Wang", "Co-Author"],
+  "year": 2025,
+  "venue": "Placeholder Venue",
+  "type": "journal",
+  "note": "Replace this file once a real BibTeX pipeline is in place."
+}

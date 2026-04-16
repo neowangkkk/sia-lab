@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import ThreadIcon from '../components/ThreadIcon.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const clusters = [
+  {
+    id: 'empathy' as const,
+    num: '01',
+    title: 'Empathy & LLMs',
+    blurb:
+      'When and how should language models express, recognize, or withhold empathy? We study the signals, costs, and pedagogy of affective AI — always through the lens of what genuine care looks like.',
+  },
+  {
+    id: 'agents' as const,
+    num: '02',
+    title: 'Multi-Agent Coordination',
+    blurb:
+      'How do agents choose partners, share knowledge, and build trust in open ecosystems? We see coordination as a form of care — agents looking out for one another.',
+  },
+  {
+    id: 'society' as const,
+    num: '03',
+    title: 'AI & Society',
+    blurb:
+      'How is AI reshaping the spaces where people help each other? We investigate how care, knowledge-sharing, and community survive — and change — in the age of AI.',
+  },
+];
+---
+<Base title="Research · Social Intelligence & AI Lab">
+  <section class="max-w-5xl mx-auto px-6 pt-24 pb-10">
+    <p class="text-xs uppercase tracking-widest text-accent mb-4">Research</p>
+    <h1 class="font-display text-4xl md:text-5xl">Three threads, one question.</h1>
+    <p class="mt-6 max-w-prose text-lg text-muted leading-relaxed">
+      Everything we study is a version of the same question: what does it mean for an AI system to
+      act with care &mdash; with empathy, competence, and appropriateness?
+    </p>
+  </section>
+
+  {clusters.map((c) => {
+    const items = projects.filter((p) => p.data.cluster === c.id);
+    return (
+      <section class="max-w-5xl mx-auto px-6 py-16">
+        <div class="flex items-start gap-5 mb-8">
+          <ThreadIcon thread={c.id} />
+          <div>
+            <span class="text-xs uppercase tracking-widest text-accent">{c.num}</span>
+            <h2 class="font-display text-3xl">{c.title}</h2>
+          </div>
+        </div>
+        <p class="max-w-prose text-muted leading-relaxed mb-10">{c.blurb}</p>
+        <ul class="grid md:grid-cols-2 gap-6">
+          {items.map((p) => (
+            <li>
+              <a href={`${base}/projects/${p.slug}`}
+                class="no-underline block bg-warm rounded-soft p-6 hover:shadow-hover hover:-translate-y-1 group">
+                <h3 class="font-display text-lg !text-ink group-hover:!text-accent">{p.data.title}</h3>
+                <p class="text-sm text-muted mt-2 leading-relaxed">{p.data.oneLine}</p>
+                <p class="text-xs text-muted mt-3 uppercase tracking-wider">{p.data.stage}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  })}
+</Base>

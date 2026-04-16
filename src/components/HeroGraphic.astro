@@ -1,0 +1,161 @@
+---
+// Two abstract forms gently reaching toward each other — empathic connection
+---
+<div class="hero-graphic" aria-hidden="true">
+  <svg viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+    <defs>
+      <linearGradient id="warmA" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#b56a3a" stop-opacity="0.25" />
+        <stop offset="100%" stop-color="#e8a87c" stop-opacity="0.15" />
+      </linearGradient>
+      <linearGradient id="warmB" x1="100%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#d4856a" stop-opacity="0.2" />
+        <stop offset="100%" stop-color="#b56a3a" stop-opacity="0.12" />
+      </linearGradient>
+      <linearGradient id="warmC" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" stop-color="#e8a87c" stop-opacity="0.3" />
+        <stop offset="100%" stop-color="#b56a3a" stop-opacity="0.05" />
+      </linearGradient>
+      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#e8a87c" stop-opacity="0.15" />
+        <stop offset="100%" stop-color="#e8a87c" stop-opacity="0" />
+      </radialGradient>
+      <filter id="softBlur">
+        <feGaussianBlur stdDeviation="2" />
+      </filter>
+    </defs>
+
+    <!-- Soft glow at the meeting point -->
+    <circle cx="400" cy="250" r="120" fill="url(#glow)" class="pulse-slow" />
+
+    <!-- Left form — reaching rightward (caregiver) -->
+    <path class="form-left" d="
+      M 180 320
+      C 160 240, 220 160, 300 180
+      C 360 195, 380 230, 390 260
+      C 395 280, 380 320, 340 340
+      C 290 365, 210 370, 180 320
+      Z
+    " fill="url(#warmA)" />
+
+    <!-- Right form — reaching leftward (receiver) -->
+    <path class="form-right" d="
+      M 620 320
+      C 640 240, 580 160, 500 180
+      C 440 195, 420 230, 410 260
+      C 405 280, 420 320, 460 340
+      C 510 365, 590 370, 620 320
+      Z
+    " fill="url(#warmB)" />
+
+    <!-- The meeting — a soft shared space where they overlap -->
+    <ellipse cx="400" cy="265" rx="55" ry="65" fill="url(#warmC)" class="breathe" />
+
+    <!-- Floating caring particles — drifting gently toward center -->
+    <circle cx="150" cy="200" r="3" fill="#b56a3a" opacity="0.2" class="drift-right" />
+    <circle cx="200" cy="150" r="2" fill="#d4856a" opacity="0.25" class="drift-right-slow" />
+    <circle cx="170" cy="280" r="2.5" fill="#e8a87c" opacity="0.2" class="drift-right" />
+    <circle cx="230" cy="350" r="2" fill="#b56a3a" opacity="0.15" class="drift-right-slow" />
+
+    <circle cx="650" cy="200" r="3" fill="#b56a3a" opacity="0.2" class="drift-left" />
+    <circle cx="600" cy="150" r="2" fill="#d4856a" opacity="0.25" class="drift-left-slow" />
+    <circle cx="630" cy="280" r="2.5" fill="#e8a87c" opacity="0.2" class="drift-left" />
+    <circle cx="570" cy="350" r="2" fill="#b56a3a" opacity="0.15" class="drift-left-slow" />
+
+    <!-- Delicate connection threads between forms -->
+    <path d="M 320 220 Q 400 200, 480 220" stroke="#b56a3a" stroke-width="0.5" opacity="0.15" fill="none" filter="url(#softBlur)" class="thread-1" />
+    <path d="M 340 290 Q 400 270, 460 290" stroke="#d4856a" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#softBlur)" class="thread-2" />
+    <path d="M 310 260 Q 400 235, 490 260" stroke="#e8a87c" stroke-width="0.5" opacity="0.18" fill="none" filter="url(#softBlur)" class="thread-3" />
+  </svg>
+</div>
+
+<style>
+  .hero-graphic {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .breathe {
+    animation: breathe 6s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .pulse-slow {
+    animation: pulse-slow 8s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .form-left {
+    animation: sway-left 7s ease-in-out infinite;
+    transform-origin: 300px 260px;
+  }
+
+  .form-right {
+    animation: sway-right 7s ease-in-out infinite;
+    transform-origin: 500px 260px;
+  }
+
+  .drift-right {
+    animation: drift-right 12s ease-in-out infinite;
+  }
+
+  .drift-right-slow {
+    animation: drift-right 18s ease-in-out infinite;
+  }
+
+  .drift-left {
+    animation: drift-left 12s ease-in-out infinite;
+  }
+
+  .drift-left-slow {
+    animation: drift-left 18s ease-in-out infinite;
+  }
+
+  .thread-1 { animation: thread-pulse 5s ease-in-out infinite; }
+  .thread-2 { animation: thread-pulse 5s ease-in-out 1.5s infinite; }
+  .thread-3 { animation: thread-pulse 5s ease-in-out 3s infinite; }
+
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.08); opacity: 0.85; }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0.7; }
+  }
+
+  @keyframes sway-left {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(8px) rotate(1deg); }
+  }
+
+  @keyframes sway-right {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(-8px) rotate(-1deg); }
+  }
+
+  @keyframes drift-right {
+    0%, 100% { transform: translateX(0) translateY(0); opacity: 0.2; }
+    50% { transform: translateX(60px) translateY(-10px); opacity: 0.35; }
+  }
+
+  @keyframes drift-left {
+    0%, 100% { transform: translateX(0) translateY(0); opacity: 0.2; }
+    50% { transform: translateX(-60px) translateY(-10px); opacity: 0.35; }
+  }
+
+  @keyframes thread-pulse {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.3; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .breathe, .pulse-slow, .form-left, .form-right,
+    .drift-right, .drift-right-slow, .drift-left, .drift-left-slow,
+    .thread-1, .thread-2, .thread-3 {
+      animation: none;
+    }
+  }
+</style>

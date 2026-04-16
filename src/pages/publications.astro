@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const pubs = (await getCollection('publications')).sort((a, b) => b.data.year - a.data.year);
+const grouped = pubs.reduce((acc, p) => {
+  (acc[p.data.year] ||= []).push(p);
+  return acc;
+}, {} as Record<number, typeof pubs>);
+const years = Object.keys(grouped).map(Number).sort((a, b) => b - a);
+---
+<Base title="Publications · Social Intelligence & AI Lab">
+  <section class="max-w-4xl mx-auto px-6 pt-24 pb-10">
+    <p class="text-xs uppercase tracking-widest text-accent mb-4">Publications</p>
+    <h1 class="font-display text-4xl md:text-5xl">Publications</h1>
+    <p class="mt-6 max-w-prose text-muted leading-relaxed">
+      Selected papers from the lab. See also the PI&rsquo;s Google Scholar page for a full list.
+    </p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-10 space-y-14">
+    {years.map((year) => (
+      <div>
+        <h2 class="font-display text-2xl text-accent/60 mb-6">{year}</h2>
+        <ul class="space-y-6">
+          {grouped[year].map(({ data }) => (
+            <li class="bg-warm rounded-soft p-6">
+              <p class="font-medium text-ink">{data.title}</p>
+              <p class="text-sm text-muted mt-1">{data.authors.join(', ')}</p>
+              <p class="text-sm text-muted italic mt-1">{data.venue} &middot; {data.type}</p>
+              {data.url && (
+                <p class="mt-2 text-sm"><a href={data.url}>Read paper &rarr;</a></p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+</Base>

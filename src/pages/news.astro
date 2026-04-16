@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const news = (await getCollection('news')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+<Base title="News · Social Intelligence & AI Lab">
+  <section class="max-w-3xl mx-auto px-6 pt-24 pb-10">
+    <p class="text-xs uppercase tracking-widest text-accent mb-4">News</p>
+    <h1 class="font-display text-4xl md:text-5xl">News &amp; updates</h1>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-10">
+    <ul class="space-y-8">
+      {news.map(async (n) => {
+        const { Content } = await n.render();
+        return (
+          <li class="bg-warm rounded-soft p-7">
+            <time class="text-xs uppercase tracking-widest text-accent">
+              {n.data.date.toISOString().slice(0, 10)}
+            </time>
+            <h2 class="font-display text-xl mt-2">{n.data.title}</h2>
+            <div class="mt-3 text-sm text-muted leading-relaxed">
+              <Content />
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+</Base>
