@@ -20,6 +20,8 @@ const people = defineCollection({
   schema: z.object({
     name: z.string(),
     website: z.string(),
+    photo: z.string().optional(),
+    role: z.string().optional(),
     order: z.number().default(0),
   }),
 });
