@@ -32,9 +32,6 @@ const photoUrl = (p: string) => (p.startsWith('http') ? p : `${base}${p}`);
             </div>
           )}
           <h2 class="font-display text-base leading-tight">{person.data.name}</h2>
-          {person.data.role && (
-            <p class="text-xs text-muted mt-1">{person.data.role}</p>
-          )}
           <p class="mt-2 text-xs">
             <a href={person.data.website} target="_blank" rel="noopener noreferrer">Website &rarr;</a>
           </p>
