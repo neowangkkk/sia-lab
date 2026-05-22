@@ -59,6 +59,9 @@ const clusters = [
                 class="no-underline block bg-warm rounded-soft p-6 hover:shadow-hover hover:-translate-y-1 group">
                 <h3 class="font-display text-lg !text-ink group-hover:!text-accent">{p.data.title}</h3>
                 <p class="text-sm text-muted mt-2 leading-relaxed">{p.data.oneLine}</p>
+                {p.data.whyMatters && (
+                  <p class="text-sm text-ink/80 mt-3 leading-relaxed">{p.data.whyMatters}</p>
+                )}
                 <p class="text-xs text-muted mt-3 uppercase tracking-wider">{p.data.stage}</p>
               </a>
             </li>

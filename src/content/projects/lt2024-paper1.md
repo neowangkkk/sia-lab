@@ -1,9 +1,10 @@
 ---
 title: Parenting, Personality & Adolescent Mental Health
 cluster: society
-stage: Draft complete · needs formatting
+stage: Writing · revising draft
 oneLine: Parenting styles × personality × adolescent mental health in 221 Toronto dyads.
-lastActivity: 2026-04
+whyMatters: Adolescent mental health is now a population-level concern, yet parenting-style research has largely stalled at main effects. Testing parenting × personality interactions moves the field toward context-sensitive intervention design rather than one-size-fits-all advice.
+lastActivity: 2026-05
 order: 3
 ---
 

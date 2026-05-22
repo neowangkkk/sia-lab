@@ -1,9 +1,10 @@
 ---
 title: Asymmetric Calibration of Social Support
 cluster: empathy
-stage: Advanced draft v12
+stage: Data analysis · LLM scoring in progress
 oneLine: 7,959 Reddit dyads reveal how support-givers and seekers miscalibrate. ACII 2026.
-lastActivity: '2026-04-12'
+whyMatters: LLMs are evaluated against a single "support" benchmark, but real support is a dyad — what a seeker wants and what a giver offers rarely line up. Mapping that asymmetry at scale shows where current empathy benchmarks systematically miss, and gives the field a measurable target for calibration.
+lastActivity: '2026-05'
 venue: ACII 2026
 order: 3
 ---

@@ -1,9 +1,10 @@
 ---
 title: Empathy Appropriateness
 cluster: empathy
-stage: Phase 2 data collection
+stage: Data collection · Phase 2 analysis
 oneLine: A signal-cost framework for when and how LLMs should express empathy.
-lastActivity: 2026-03
+whyMatters: Empathic LLMs can comfort users or quietly override their judgment, and current safety frameworks have no principled way to distinguish the two. A signal-cost account specifies when expressing empathy is appropriate and when it imposes costs on the recipient — directly informing how dialogue agents should be tuned.
+lastActivity: 2026-05
 collaborators: ['Chi-Ching (IERG)']
 order: 1
 ---

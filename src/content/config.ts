@@ -7,6 +7,7 @@ const projects = defineCollection({
     cluster: z.enum(['empathy', 'agents', 'society']),
     stage: z.string(),
     oneLine: z.string(),
+    whyMatters: z.string().optional(),
     lastActivity: z.string().optional(),
     collaborators: z.array(z.string()).optional(),
     venue: z.string().optional(),
@@ -18,17 +19,7 @@ const people = defineCollection({
   type: 'content',
   schema: z.object({
     name: z.string(),
-    role: z.string(),
-    affiliation: z.string().optional(),
-    email: z.string().optional(),
-    photo: z.string().optional(),
-    links: z
-      .object({
-        scholar: z.string().optional(),
-        github: z.string().optional(),
-        website: z.string().optional(),
-      })
-      .optional(),
+    website: z.string(),
     order: z.number().default(0),
   }),
 });

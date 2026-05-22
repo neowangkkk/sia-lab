@@ -23,16 +23,22 @@ const years = Object.keys(grouped).map(Number).sort((a, b) => b - a);
       <div>
         <h2 class="font-display text-2xl text-accent/60 mb-6">{year}</h2>
         <ul class="space-y-6">
-          {grouped[year].map(({ data }) => (
-            <li class="bg-warm rounded-soft p-6">
-              <p class="font-medium text-ink">{data.title}</p>
-              <p class="text-sm text-muted mt-1">{data.authors.join(', ')}</p>
-              <p class="text-sm text-muted italic mt-1">{data.venue} &middot; {data.type}</p>
-              {data.url && (
-                <p class="mt-2 text-sm"><a href={data.url}>Read paper &rarr;</a></p>
-              )}
-            </li>
-          ))}
+          {grouped[year].map(({ data }) => {
+            const link = data.url || (data.doi ? `https://doi.org/${data.doi}` : null);
+            return (
+              <li class="bg-warm rounded-soft p-6">
+                <p class="font-medium text-ink">{data.title}</p>
+                <p class="text-sm text-muted mt-1">{data.authors.join(', ')}</p>
+                <p class="text-sm text-muted italic mt-1">{data.venue} &middot; {data.type}</p>
+                {data.doi && (
+                  <p class="text-xs text-muted mt-1">doi:{data.doi}</p>
+                )}
+                {link && (
+                  <p class="mt-2 text-sm"><a href={link}>Read paper &rarr;</a></p>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
     ))}

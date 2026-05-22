@@ -1,9 +1,10 @@
 ---
 title: AI in the Syllabus
 cluster: society
-stage: Early · data collection
+stage: Data collection · sourcing syllabi
 oneLine: How GenAI policy shows up in university syllabi (240 UofT courses and counting).
-lastActivity: 2026-04
+whyMatters: Universities are setting de facto GenAI policy not in central documents but in individual syllabi, and almost no one is tracking it. Building the first systematic corpus of how instructors actually govern AI use gives administrators evidence rather than anecdote when policy is revised.
+lastActivity: 2026-05
 order: 1
 ---
 

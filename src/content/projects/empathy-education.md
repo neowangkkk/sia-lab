@@ -1,10 +1,11 @@
 ---
 title: Teaching Empathy in AI Design
 cluster: empathy
-stage: Submitted · awaiting feedback
-oneLine: ELM-based pedagogy for teaching empathy in AI design (EduCHI 2026).
-lastActivity: 2026-02
-venue: EduCHI 2026
+stage: Revising · re-targeting 10th EduTeach
+oneLine: ELM-based pedagogy for teaching empathy in AI design.
+whyMatters: Most AI curricula treat empathy as a UX feature rather than a design competency. Grounding pedagogy in the Elaboration Likelihood Model trains designers to reason about *when* empathic AI is appropriate — a skill that becomes consequential as conversational systems mediate health, education, and care.
+lastActivity: 2026-05
+venue: 10th EduTeach
 order: 2
 ---
 

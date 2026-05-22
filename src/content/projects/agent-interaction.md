@@ -1,9 +1,10 @@
 ---
-title: The Big Seven · LLM Agent Partner Selection
+title: When Agents Interact
 cluster: agents
-stage: Drafting
-oneLine: A personality framework for how LLM agents choose partners in open ecosystems.
-lastActivity: '2026-04-01'
+stage: Literature review · drafting
+oneLine: When and how LLM agents engage with one another in open ecosystems.
+whyMatters: As multi-agent systems become composable, the open question shifts from "can agents cooperate" to "when should they engage at all." A principled account of partner choice, timing, and withdrawal is foundational for ecosystems where attention and compute are real costs.
+lastActivity: '2026-05'
 order: 1
 ---
 
