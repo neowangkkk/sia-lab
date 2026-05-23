@@ -16,18 +16,18 @@ const photoUrl = (p: string) => (p.startsWith('http') ? p : `${base}${p}`);
   </section>
 
   <section class="max-w-5xl mx-auto px-6 py-10">
-    <ul class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
       {people.map((person) => (
-        <li class="bg-warm rounded-soft p-5 flex flex-col items-center text-center hover:shadow-hover hover:-translate-y-1">
+        <li class="bg-warm rounded-soft p-6 flex flex-col items-center text-center hover:shadow-hover hover:-translate-y-1">
           {person.data.photo ? (
             <img
               src={photoUrl(person.data.photo)}
               alt={person.data.name}
-              class="w-20 h-20 rounded-full object-cover mb-3"
+              class="w-32 h-32 rounded-full object-cover mb-4"
               loading="lazy"
             />
           ) : (
-            <div class="w-20 h-20 rounded-full bg-paper flex items-center justify-center text-muted text-xl mb-3">
+            <div class="w-32 h-32 rounded-full bg-paper flex items-center justify-center text-muted text-2xl mb-4">
               {person.data.name.charAt(0)}
             </div>
           )}
