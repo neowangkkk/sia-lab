@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Social Intelligence &amp; AI Lab — University of Toronto</title>
+<meta name="description" content="The Social Intelligence & AI Lab studies how artificial agents perceive, express, and calibrate social behavior — through the lens of empathy, coordination, and care." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2c2420;
+    --paper:#faf6f0;
+    --warm:#f5ede4;
+    --rule:#e8e0d6;
+    --muted:#8a7e74;
+    --accent:#b56a3a;
+    --accent-light:#f3e8dd;
+    --shadow-gentle:0 2px 20px rgba(44,36,32,.06);
+    --shadow-hover:0 4px 30px rgba(44,36,32,.10);
+    --radius:.75rem;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',ui-sans-serif,system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{font-family:'Fraunces',ui-serif,Georgia,serif;font-weight:500;letter-spacing:-.01em}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);transition:color .2s,border-color .2s}
+  a:hover{color:var(--accent);border-color:var(--accent)}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500}
+
+  /* ---------- Header ---------- */
+  header{padding:28px 0 0}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-mark{
+    width:36px;height:36px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, #d99268 0%, var(--accent) 65%, #7d4521 100%);
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.4), 0 2px 6px rgba(44,36,32,.18);
+  }
+  .brand-text{display:flex;flex-direction:column;line-height:1.1}
+  .brand-text .lab{font-family:'Fraunces',serif;font-size:18px;font-weight:500;letter-spacing:-.01em}
+  .brand-text .affil{font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+  .topnav{display:flex;gap:22px;font-size:13px;color:var(--muted)}
+  .topnav a{border:none;color:var(--muted)}
+  .topnav a:hover{color:var(--accent)}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:80px 0 56px}
+  .hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:center}
+  .hero h1{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(40px,5.4vw,68px);
+    line-height:1.04;margin:18px 0 22px;letter-spacing:-.02em;
+  }
+  .hero h1 em{font-style:italic;color:var(--accent);font-weight:500}
+  .hero p.lede{font-size:18px;color:var(--ink);max-width:54ch;line-height:1.65}
+  .hero .quiet{color:var(--muted);font-size:14px;margin-top:18px;letter-spacing:.02em}
+  .hero-cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:var(--radius);
+    font-size:14px;font-weight:500;border:none;cursor:pointer;
+    transition:transform .15s,box-shadow .2s;
+  }
+  .btn-primary{background:var(--accent);color:var(--paper)}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:var(--shadow-hover);color:var(--paper)}
+  .btn-ghost{background:var(--warm);color:var(--ink)}
+  .btn-ghost:hover{transform:translateY(-1px);box-shadow:var(--shadow-hover);color:var(--ink)}
+
+  /* Hero art */
+  .hero-art{position:relative;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+  .hero-art svg{width:100%;height:100%;max-width:360px}
+
+  /* ---------- Section ---------- */
+  section.block{padding:72px 0}
+  section.bg-warm{background:var(--warm)}
+  section h2{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(28px,3.6vw,40px);
+    letter-spacing:-.015em;margin:10px 0 36px;line-height:1.15;
+  }
+  section h2 span.thin{color:var(--muted);font-style:italic;font-weight:400}
+
+  /* divider */
+  .divider{display:flex;justify-content:center;padding:24px 0}
+  .divider svg{width:80%;max-width:720px;opacity:.35}
+
+  /* ---------- Threads ---------- */
+  .threads{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .thread{
+    background:var(--paper);border-radius:var(--radius);padding:28px 26px;
+    box-shadow:var(--shadow-gentle);transition:transform .15s,box-shadow .2s;
+    border:1px solid var(--rule);
+  }
+  .thread:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+  .thread-icon{width:46px;height:46px;margin-bottom:18px;color:var(--accent)}
+  .thread h3{font-family:'Fraunces',serif;font-size:20px;font-weight:500;margin:0 0 10px;letter-spacing:-.01em}
+  .thread p{font-size:14px;color:var(--muted);line-height:1.65;margin:0}
+
+  /* ---------- Projects ---------- */
+  .cluster{margin-bottom:44px}
+  .cluster:last-child{margin-bottom:0}
+  .cluster-label{
+    display:flex;align-items:baseline;gap:14px;margin-bottom:20px;
+    padding-bottom:12px;border-bottom:1px solid var(--rule);
+  }
+  .cluster-label .name{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--ink)}
+  .cluster-label .count{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+  .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .project{
+    padding:22px 22px 20px;border-radius:var(--radius);
+    background:var(--paper);border:1px solid var(--rule);
+    transition:border-color .2s,box-shadow .2s,transform .15s;
+  }
+  .project:hover{border-color:#d8c9b5;box-shadow:var(--shadow-gentle);transform:translateY(-2px)}
+  .project .title{font-family:'Fraunces',serif;font-size:16.5px;font-weight:500;margin:0 0 6px;letter-spacing:-.005em;line-height:1.3}
+  .project .one-line{font-size:13.5px;color:var(--ink);margin:0 0 12px;line-height:1.55}
+  .project .meta{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+  .project .stage{padding:3px 9px;border-radius:999px;background:var(--accent-light);color:var(--accent);text-transform:none;letter-spacing:.02em;font-size:11px}
+  .project .venue{font-style:italic;text-transform:none;letter-spacing:.01em;color:var(--accent)}
+
+  /* ---------- People ---------- */
+  .people{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 28px;justify-items:center;max-width:840px;margin:0 auto}
+  .person{text-align:center;width:100%;max-width:220px}
+  .person .photo{
+    width:150px;height:150px;border-radius:50%;object-fit:cover;
+    background:var(--warm);box-shadow:var(--shadow-gentle);
+    display:block;margin:0 auto 16px;
+  }
+  .person .name{font-family:'Fraunces',serif;font-size:17px;font-weight:500;margin:0 0 6px;letter-spacing:-.005em}
+  .person .link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);border:none}
+  .person .link:hover{color:var(--accent)}
+
+  /* ---------- Publications ---------- */
+  .pubs{display:flex;flex-direction:column;gap:18px}
+  .pub{
+    padding:20px 22px;border-radius:var(--radius);
+    background:var(--paper);border:1px solid var(--rule);
+  }
+  .pub .pub-title{font-family:'Fraunces',serif;font-size:16px;font-weight:500;line-height:1.4;margin:0 0 6px;letter-spacing:-.005em}
+  .pub .pub-meta{font-size:13px;color:var(--muted);line-height:1.55}
+  .pub .pub-meta .year{color:var(--accent);font-weight:500}
+  .pub .pub-meta .doi{font-size:12px;letter-spacing:.02em}
+
+  /* ---------- News ---------- */
+  .news-item{
+    display:grid;grid-template-columns:140px 1fr;gap:24px;
+    padding:18px 0;border-bottom:1px solid var(--rule);
+  }
+  .news-item:last-child{border-bottom:none}
+  .news-item .date{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;padding-top:3px}
+  .news-item .body{border-left:2px solid rgba(181,106,58,.4);padding-left:18px}
+  .news-item .body p{margin:0;font-size:15px}
+  .news-item .body .lead{font-family:'Fraunces',serif;font-size:16.5px;margin-bottom:6px}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .contact-card{
+    background:var(--paper);border-radius:var(--radius);padding:28px 26px;
+    border:1px solid var(--rule);
+  }
+  .contact-card .label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+  .contact-card .email{font-family:'Fraunces',serif;font-size:20px;font-weight:500}
+  .contact-card .email a{border:none}
+  .contact-card .small{font-size:13px;color:var(--muted);margin-top:8px}
+  .contact-card address{font-style:normal;font-size:14.5px;line-height:1.7}
+
+  /* ---------- Footer ---------- */
+  footer{padding:48px 0 56px;border-top:1px solid var(--rule);margin-top:32px}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+  footer .copy{font-size:12px;color:var(--muted);letter-spacing:.04em}
+  footer .links{display:flex;gap:18px;font-size:12px}
+  footer .links a{border:none;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+  footer .links a:hover{color:var(--accent)}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:880px){
+    .hero{padding:56px 0 40px}
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .hero-art{max-width:280px;margin:0 auto}
+    .threads{grid-template-columns:1fr;gap:18px}
+    .project-grid{grid-template-columns:1fr}
+    .people{grid-template-columns:repeat(2,1fr);gap:28px 18px}
+    .contact-grid{grid-template-columns:1fr}
+    .news-item{grid-template-columns:1fr;gap:6px}
+    .topnav{display:none}
+    section.block{padding:56px 0}
+  }
+  @media (max-width:480px){
+    .people{grid-template-columns:1fr}
+    .hero h1{font-size:38px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== HEADER ============== -->
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true"></div>
+      <div class="brand-text">
+        <span class="lab">Social Intelligence &amp; AI Lab</span>
+        <span class="affil">University of Toronto</span>
+      </div>
+    </div>
+    <nav class="topnav">
+      <a href="#threads">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#people">People</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">SIA Lab · est. 2026</p>
+      <h1>We study social<br/>intelligence in&nbsp;<em>AI</em>.</h1>
+      <p class="lede">
+        How do artificial agents perceive, express, and calibrate social behavior?
+        We pursue these questions through the lens of empathy, care, and what it
+        means to be present for another &mdash; human or otherwise.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#threads">Our research &rarr;</a>
+        <a class="btn btn-ghost" href="#people">Meet the team</a>
+      </div>
+      <p class="quiet">Faculty of Information · Toronto, Canada</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#d99268" stop-opacity=".25"/>
+            <stop offset="100%" stop-color="#b56a3a" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- gentle background glow -->
+        <circle cx="180" cy="180" r="160" fill="url(#g1)"/>
+        <!-- three orbits -->
+        <circle cx="180" cy="180" r="120" fill="none" stroke="#b56a3a" stroke-opacity=".35" stroke-width="1"/>
+        <circle cx="180" cy="180" r="80"  fill="none" stroke="#b56a3a" stroke-opacity=".5"  stroke-width="1"/>
+        <circle cx="180" cy="180" r="40"  fill="none" stroke="#b56a3a" stroke-opacity=".7"  stroke-width="1"/>
+        <!-- three nodes (threads) -->
+        <circle cx="180" cy="60"  r="9" fill="#b56a3a"/>
+        <circle cx="284" cy="240" r="9" fill="#b56a3a"/>
+        <circle cx="76"  cy="240" r="9" fill="#b56a3a"/>
+        <!-- center -->
+        <circle cx="180" cy="180" r="14" fill="#2c2420"/>
+        <!-- connecting lines -->
+        <line x1="180" y1="180" x2="180" y2="60"  stroke="#2c2420" stroke-opacity=".4" stroke-width="1"/>
+        <line x1="180" y1="180" x2="284" y2="240" stroke="#2c2420" stroke-opacity=".4" stroke-width="1"/>
+        <line x1="180" y1="180" x2="76"  y2="240" stroke="#2c2420" stroke-opacity=".4" stroke-width="1"/>
+        <!-- thread labels -->
+        <text x="180" y="45"  text-anchor="middle" font-family="Fraunces, serif" font-size="11" fill="#2c2420" font-style="italic">empathy</text>
+        <text x="296" y="262" text-anchor="middle" font-family="Fraunces, serif" font-size="11" fill="#2c2420" font-style="italic">agents</text>
+        <text x="64"  y="262" text-anchor="middle" font-family="Fraunces, serif" font-size="11" fill="#2c2420" font-style="italic">society</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- gentle divider -->
+<div class="divider">
+  <svg viewBox="0 0 1000 40" fill="none" aria-hidden="true">
+    <path d="M 0 20 Q 250 5, 500 20 T 1000 20" stroke="#b56a3a" stroke-width=".8" fill="none"/>
+  </svg>
+</div>
+
+<!-- ============== THREADS ============== -->
+<section id="threads" class="block bg-warm">
+  <div class="wrap">
+    <p class="eyebrow">What we do</p>
+    <h2>Three threads, <span class="thin">one question.</span></h2>
+    <div class="threads">
+      <div class="thread">
+        <svg class="thread-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M24 38c-7-5-13-10-13-18a7 7 0 0 1 13-4 7 7 0 0 1 13 4c0 8-6 13-13 18Z"/>
+        </svg>
+        <h3>Empathy &amp; LLMs</h3>
+        <p>When and how should language models express, recognize, or withhold empathy? We build frameworks, taxonomies, and evaluation protocols grounded in care.</p>
+      </div>
+      <div class="thread">
+        <svg class="thread-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="24" cy="14" r="5"/><circle cx="12" cy="34" r="5"/><circle cx="36" cy="34" r="5"/>
+          <line x1="24" y1="19" x2="12" y2="29"/><line x1="24" y1="19" x2="36" y2="29"/><line x1="17" y1="34" x2="31" y2="34"/>
+        </svg>
+        <h3>Multi-Agent Coordination</h3>
+        <p>How do agents select, trust, and care for one another in open ecosystems? We develop theories of coordination as a form of mutual support.</p>
+      </div>
+      <div class="thread">
+        <svg class="thread-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="24" cy="24" r="14"/>
+          <path d="M10 24h28M24 10c4 4 4 24 0 28M24 10c-4 4-4 24 0 28"/>
+        </svg>
+        <h3>AI &amp; Society</h3>
+        <p>How is AI reshaping the way people help each other? We study how care and knowledge-sharing survive technological change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROJECTS ============== -->
+<section id="projects" class="block">
+  <div class="wrap">
+    <p class="eyebrow">In flight</p>
+    <h2>Active projects.</h2>
+
+    <!-- Empathy cluster -->
+    <div class="cluster">
+      <div class="cluster-label">
+        <span class="name">Empathy &amp; LLMs</span>
+        <span class="count">04 projects</span>
+      </div>
+      <div class="project-grid">
+        <div class="project">
+          <p class="title">Empathy Appropriateness</p>
+          <p class="one-line">A signal-cost framework for when and how LLMs should express empathy.</p>
+          <div class="meta"><span class="stage">Phase 2 analysis</span></div>
+        </div>
+        <div class="project">
+          <p class="title">Asymmetric Calibration of Social Support</p>
+          <p class="one-line">7,959 Reddit dyads reveal how support-givers and seekers miscalibrate.</p>
+          <div class="meta"><span class="stage">LLM scoring</span><span class="venue">ACII 2026</span></div>
+        </div>
+        <div class="project">
+          <p class="title">Teaching Empathy in AI Design</p>
+          <p class="one-line">ELM-based pedagogy for teaching empathy in AI design.</p>
+          <div class="meta"><span class="stage">Revising</span><span class="venue">10th EduTeach</span></div>
+        </div>
+        <div class="project">
+          <p class="title">Empathy &times; Expertise at Scale</p>
+          <p class="one-line">Extended replication of Haas (2015) across 8.3M medical Q&amp;A pairs.</p>
+          <div class="meta"><span class="stage">Reframing</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agents cluster -->
+    <div class="cluster">
+      <div class="cluster-label">
+        <span class="name">Multi-Agent Coordination</span>
+        <span class="count">02 projects</span>
+      </div>
+      <div class="project-grid">
+        <div class="project">
+          <p class="title">When Agents Interact</p>
+          <p class="one-line">When and how LLM agents engage with one another in open ecosystems.</p>
+          <div class="meta"><span class="stage">Drafting</span></div>
+        </div>
+        <div class="project">
+          <p class="title">CDMK · Coordination Artifacts as Meta-Knowledge</p>
+          <p class="one-line">Multi-agent coordination artifacts as a form of organizational meta-knowledge.</p>
+          <div class="meta"><span class="stage">Self-review</span><span class="venue">JMIS</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Society cluster -->
+    <div class="cluster">
+      <div class="cluster-label">
+        <span class="name">AI &amp; Society</span>
+        <span class="count">03 projects</span>
+      </div>
+      <div class="project-grid">
+        <div class="project">
+          <p class="title">AI in the Syllabus</p>
+          <p class="one-line">How GenAI policy shows up in university syllabi (240 UofT courses and counting).</p>
+          <div class="meta"><span class="stage">Data collection</span></div>
+        </div>
+        <div class="project">
+          <p class="title">Who Still Uses Reddit?</p>
+          <p class="one-line">Sustainability of healthcare Q&amp;A communities (r/AskDocs) in the LLM era.</p>
+          <div class="meta"><span class="stage">Framework complete</span></div>
+        </div>
+        <div class="project">
+          <p class="title">Parenting, Personality &amp; Adolescent Mental Health</p>
+          <p class="one-line">Parenting styles &times; personality &times; mental health in 221 Toronto dyads.</p>
+          <div class="meta"><span class="stage">Revising draft</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PEOPLE ============== -->
+<section id="people" class="block bg-warm">
+  <div class="wrap">
+    <p class="eyebrow">Who we are</p>
+    <h2>The people.</h2>
+    <div class="people">
+      <div class="person">
+        <img class="photo" src="public/people/tao-wang.jpg" alt="Tao Wang"/>
+        <p class="name">Tao Wang</p>
+        <a class="link" href="https://ischool.utoronto.ca/faculty-profile/tao-wang/" target="_blank" rel="noopener">iSchool profile &rarr;</a>
+      </div>
+      <div class="person">
+        <img class="photo" src="public/people/irfan-mohammed.png" alt="Irfan Mohammed"/>
+        <p class="name">Irfan Mohammed</p>
+        <a class="link" href="https://www.linkedin.com/in/mdmmirfan/" target="_blank" rel="noopener">LinkedIn &rarr;</a>
+      </div>
+      <div class="person">
+        <img class="photo" src="public/people/sonia-juan.png" alt="Chi-Ching (Sonia) Juan"/>
+        <p class="name">Chi-Ching (Sonia) Juan</p>
+        <a class="link" href="https://www.linkedin.com/in/sonia-juan/" target="_blank" rel="noopener">LinkedIn &rarr;</a>
+      </div>
+      <div class="person">
+        <img class="photo" src="public/people/michael-wei.png" alt="Michael Wei"/>
+        <p class="name">Michael Wei</p>
+        <a class="link" href="https://www.linkedin.com/in/chihangwei/" target="_blank" rel="noopener">LinkedIn &rarr;</a>
+      </div>
+      <div class="person">
+        <img class="photo" src="public/people/yang-xiu.png" alt="Yang Xiu"/>
+        <p class="name">Yang Xiu</p>
+        <a class="link" href="https://www.linkedin.com/in/yang-xiu-uoft/" target="_blank" rel="noopener">LinkedIn &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PUBLICATIONS ============== -->
+<section id="publications" class="block">
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+    <h2>Recent publications.</h2>
+    <div class="pubs">
+      <div class="pub">
+        <p class="pub-title">Appropriateness of empathy in AI: A signal-cost perspective</p>
+        <p class="pub-meta">
+          Wang, T., Juan, C.-C., &amp; Lee, H. &middot;
+          <span class="year">2025</span> &middot;
+          <em>IEEE CASCON Conference, Toronto, Canada</em><br/>
+          <span class="doi">doi: <a href="https://doi.org/10.1109/CASCON66301.2025.00102" target="_blank" rel="noopener">10.1109/CASCON66301.2025.00102</a></span>
+        </p>
+      </div>
+      <div class="pub">
+        <p class="pub-title">Effect of interactive empowerment between digital technology and social network on manufacturing firm growth: Evidence from China</p>
+        <p class="pub-meta">
+          Pu, M., Hao, Y., &amp; Wang, T. &middot;
+          <span class="year">2025</span> &middot;
+          <em>Technology Analysis &amp; Strategic Management</em><br/>
+          <span class="doi">doi: <a href="https://doi.org/10.1080/09537325.2025.2607471" target="_blank" rel="noopener">10.1080/09537325.2025.2607471</a></span>
+        </p>
+      </div>
+      <div class="pub">
+        <p class="pub-title">The impact of emotional distress and empathy on knowledge sharing in entrepreneurial communities</p>
+        <p class="pub-meta">
+          Wang, T., &amp; Soh, P.-H. &middot;
+          <span class="year">2023</span> &middot;
+          <em>Academy of Management Proceedings, 2023(1)</em><br/>
+          <span class="doi">doi: <a href="https://doi.org/10.5465/amproc.2023.286bp" target="_blank" rel="noopener">10.5465/amproc.2023.286bp</a></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== NEWS ============== -->
+<section class="block bg-warm">
+  <div class="wrap">
+    <p class="eyebrow">Latest</p>
+    <h2>Lab news.</h2>
+    <div class="news-item">
+      <time class="date">2026 &middot; 04 &middot; 15</time>
+      <div class="body">
+        <p class="lead">The Social Intelligence &amp; AI Lab website is live.</p>
+        <p>Our lab site launches with eleven active projects across three research threads. More to come.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CONTACT ============== -->
+<section id="contact" class="block">
+  <div class="wrap">
+    <p class="eyebrow">Get in touch</p>
+    <h2>Work with us.</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <p class="label">General inquiries</p>
+        <p class="email"><a href="mailto:hello@sialab.org">hello@sialab.org</a></p>
+        <p class="small">For collaborations, press, and prospective students.</p>
+      </div>
+      <div class="contact-card">
+        <p class="label">Address</p>
+        <address>
+          University of Toronto<br/>
+          Claude T. Bissell Building<br/>
+          140 St. George Street<br/>
+          Toronto, ON, M5S 3G6
+        </address>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="wrap">
+    <p class="copy">&copy; 2026 Social Intelligence &amp; AI Lab &middot; University of Toronto</p>
+    <div class="links">
+      <a href="https://neowangkkk.github.io/sia-lab/" target="_blank" rel="noopener">Full site</a>
+      <a href="mailto:hello@sialab.org">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
