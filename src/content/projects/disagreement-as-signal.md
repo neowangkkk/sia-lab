@@ -1,15 +1,15 @@
 ---
-title: 'Disagreement as Signal'
+title: "Disagreement as Signal: Externalizing Tacit Knowledge through Ambient LLM Probing"
 cluster: society
-area: Knowledge management; organizational learning
+area: "Knowledge management; organizational learning"
 stage: Proof of concept · gold labeling and evaluation pending
 oneLine: An ambient LLM that probes experts the moment they disagree, turning tacit judgment into reusable knowledge.
 whyMatters: Organizations lose expert judgment because the moments that contain it are never written down, and asking experts to state their general rules after the fact produces platitudes. Catching the reasoning while a concrete decision is still live is the difference between a knowledge base of maxims and one of usable, scoped judgments.
-idea: Use an ambient LLM system to observe routine work, detect disagreement as a high-signal moment, ask a targeted in-context question while the decision is fresh, and convert the response into a situated knowledge card containing condition, action, rationale, and scope.
-researchQuestion: Can disagreement in everyday work serve as a trigger for targeted LLM probing that externalizes experts' tacit judgment more effectively than asking them to articulate general rules?
-keyProposition: Disagreement reveals situated expert judgment. Concrete, just-in-time probes at disagreement moments can make tacit reasoning articulable and preserve it as scoped, reusable organizational knowledge.
-dataDescription: Proof-of-concept corpus drawn from 2,400 code-review comments across Rust, Django, and pandas — 526 multi-turn threads, 495 after the multi-participant filter, and 255 senior–junior candidate threads. An 80-thread stratified sample carries detector predictions, and five real situated knowledge cards have been constructed.
-findings: The system produced traceable knowledge cards from real disagreements, establishing feasibility. In the 80-thread sample the detector classified 31 threads as disagreement-with-rationale and 49 as neutral. Precision, recall, F1, inter-rater reliability, transfer accuracy, and practitioner usefulness are not yet available — human gold labeling and the planned 12–16-person evaluation are still pending.
+idea: "Use an ambient LLM system to observe routine work, detect disagreement as a high-signal moment, ask a targeted in-context question while the decision is fresh, and convert the response into a situated knowledge card containing condition, action, rationale, and scope."
+researchQuestion: "Can disagreement in everyday work serve as a trigger for targeted LLM probing that externalizes experts’ tacit judgment more effectively than asking them to articulate general rules?"
+keyProposition: "Disagreement reveals situated expert judgment; concrete, just-in-time probes at disagreement moments can make tacit reasoning articulable and preserve it as scoped, reusable organizational knowledge."
+dataDescription: "Proof-of-concept corpus drawn from 2,400 code-review comments across Rust, Django, and pandas: 526 multi-turn threads, 495 after the multi-participant filter, and 255 senior–junior candidate threads. An 80-thread stratified sample has detector predictions, and five real situated knowledge cards have been constructed."
+findings: "The system produced traceable knowledge cards from real disagreements, demonstrating feasibility. In the 80-thread sample, the detector classified 31 as disagreement-with-rationale and 49 as neutral. Precision, recall, F1, inter-rater reliability, transfer accuracy, and practitioner usefulness are not yet results because human gold labeling and the planned 12–16-person evaluation remain pending."
 lastActivity: 2026-08
 order: 2
 ---

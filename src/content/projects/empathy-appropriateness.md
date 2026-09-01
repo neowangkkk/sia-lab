@@ -1,15 +1,15 @@
 ---
-title: 'Should Machines Be Empathic?'
+title: "Should Machines Be Empathic? An Integrative Review of Empathy Appropriateness in Large Language Models"
 cluster: empathy
-area: Human–AI communication; empathic AI
+area: "Human–AI communication; empathic AI"
 stage: Conceptual paper · propositions developed
 oneLine: Empathy is appropriate when it preserves the user's primary goal, and costly when it displaces it.
 whyMatters: The debate over empathic LLMs has been stuck on capability — whether a model can produce empathy that reads as genuine. That question is now largely settled and the wrong one to keep asking. What designers actually need is a principle for when empathy helps and when it quietly redirects a user away from what they came to do.
-idea: Shift the debate from whether LLMs can display empathy to when empathy is appropriate, using Multiple Goals Theory to explain how empathic recognition can support or displace the user's primary communicative goal.
-researchQuestion: When is empathy appropriate in an LLM response, and what communicative principle should govern whether and how an LLM uses empathy?
-keyProposition: Empathy is appropriate when it preserves and advances the user's primary communicative goal, and inappropriate when socioemotional engagement competes with, redirects, or substitutes for that goal. Emotional support is not displacing when support is itself the primary goal.
-dataDescription: Conceptual synthesis of research on LLM empathy capability, perceived empathy, interaction context, human–AI differences, and the costs of excessive or misdirected empathy. The current paper architecture involves no new empirical dataset.
-findings: This is a conceptual result rather than an empirical finding. The paper develops goal-hierarchy preservation, distinguishes goal-preserving empathy from goal displacement, and derives five propositions covering goal contingency, recognition need, facilitation of primary-goal pursuit, displacement costs, and emotional support as a legitimate primary goal.
+idea: "Shift the debate from whether LLMs can display empathy to when empathy is appropriate, using Multiple Goals Theory to explain how empathic recognition can support or displace the user’s primary communicative goal."
+researchQuestion: "When is empathy appropriate in an LLM response, and what communicative principle should govern whether and how an LLM uses empathy?"
+keyProposition: "Empathy is appropriate when it preserves and advances the user’s primary communicative goal; it becomes inappropriate when socioemotional engagement competes with, redirects, or substitutes for that goal. Emotional support is not displacing when it is itself the primary goal."
+dataDescription: "Conceptual synthesis of research on LLM empathy capability, perceived empathy, interaction context, human–AI differences, and the costs of excessive or misdirected empathy; no new empirical dataset in the current paper architecture."
+findings: "Conceptual result, not an empirical finding: the paper develops goal-hierarchy preservation, distinguishes goal-preserving empathy from goal displacement, and derives five propositions covering goal contingency, recognition need, facilitation of primary-goal pursuit, displacement costs, and emotional support as a legitimate primary goal."
 lastActivity: 2026-08
 collaborators: ['Chi-Ching Juan']
 order: 1
