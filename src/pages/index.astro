@@ -52,36 +52,36 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <section class="bg-warm py-20">
     <div class="max-w-5xl mx-auto px-6">
       <p class="text-xs uppercase tracking-widest text-accent mb-4">What we do</p>
-      <h2 class="font-display text-3xl md:text-4xl mb-14">Three threads, one question.</h2>
+      <h2 class="font-display text-3xl md:text-4xl mb-14">Three areas, one question.</h2>
       <div class="grid md:grid-cols-3 gap-8">
         <a href={`${base}/research`} class="group bg-paper p-8 rounded-soft shadow-gentle hover:shadow-hover hover:-translate-y-1 no-underline block text-center">
           <div class="flex justify-center">
-            <ThreadIcon thread="empathy" />
+            <ThreadIcon thread="km" />
           </div>
-          <h3 class="font-display text-xl mb-3 !text-ink group-hover:!text-accent">Empathy &amp; LLMs</h3>
+          <h3 class="font-display text-xl mb-3 !text-ink group-hover:!text-accent">Knowledge Management and AI</h3>
           <p class="text-sm text-muted leading-relaxed">
-            When and how should language models express, recognize, or withhold empathy?
-            We build frameworks, taxonomies, and evaluation protocols grounded in care.
+            What does an organization know, and what does it lose in the act of deciding?
+            We study the knowledge that coordination produces and then throws away.
           </p>
         </a>
         <a href={`${base}/research`} class="group bg-paper p-8 rounded-soft shadow-gentle hover:shadow-hover hover:-translate-y-1 no-underline block text-center">
           <div class="flex justify-center">
             <ThreadIcon thread="agents" />
           </div>
-          <h3 class="font-display text-xl mb-3 !text-ink group-hover:!text-accent">Multi-Agent Coordination</h3>
+          <h3 class="font-display text-xl mb-3 !text-ink group-hover:!text-accent">Agent to Agent</h3>
           <p class="text-sm text-muted leading-relaxed">
-            How do agents select, trust, and care for one another in open ecosystems?
-            We develop theories of coordination as a form of mutual support.
+            How do agents choose, evaluate, and address one another &mdash; and the people
+            they work alongside? Partner selection, evaluation bias, and empathy in the loop.
           </p>
         </a>
         <a href={`${base}/research`} class="group bg-paper p-8 rounded-soft shadow-gentle hover:shadow-hover hover:-translate-y-1 no-underline block text-center">
           <div class="flex justify-center">
-            <ThreadIcon thread="society" />
+            <ThreadIcon thread="education" />
           </div>
-          <h3 class="font-display text-xl mb-3 !text-ink group-hover:!text-accent">AI &amp; Society</h3>
+          <h3 class="font-display text-xl mb-3 !text-ink group-hover:!text-accent">AI and Education</h3>
           <p class="text-sm text-muted leading-relaxed">
-            How is AI reshaping the way people help each other?
-            We study how care and knowledge-sharing survive technological change.
+            How is AI actually governed where students meet it? Not in central policy
+            documents, but in one syllabus, for one course, written by one instructor.
           </p>
         </a>
       </div>

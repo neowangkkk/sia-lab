@@ -1,6 +1,6 @@
 ---
 title: "Should Machines Be Empathic? An Integrative Review of Empathy Appropriateness in Large Language Models"
-cluster: empathy
+cluster: agents
 area: "Human–AI communication; empathic AI"
 stage: Conceptual paper · propositions developed
 oneLine: Empathy is appropriate when it preserves the user's primary goal, and costly when it displaces it.
@@ -12,7 +12,7 @@ dataDescription: "Conceptual synthesis of research on LLM empathy capability, pe
 findings: "Conceptual result, not an empirical finding: the paper develops goal-hierarchy preservation, distinguishes goal-preserving empathy from goal displacement, and derives five propositions covering goal contingency, recognition need, facilitation of primary-goal pursuit, displacement costs, and emotional support as a legitimate primary goal."
 lastActivity: 2026-08
 collaborators: ['Chi-Ching Juan']
-order: 1
+order: 3
 ---
 
 An LLM that responds to a debugging question by first acknowledging how frustrating the bug must be

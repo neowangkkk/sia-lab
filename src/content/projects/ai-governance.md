@@ -1,6 +1,6 @@
 ---
 title: "Same Course, Different Rules: Instructor-Level Governance of Student–AI Interaction in Higher Education"
-cluster: society
+cluster: education
 area: "AI governance; higher education"
 stage: Analysis complete · drafting
 oneLine: 1,836 syllabi show GenAI rules are set by instructor judgment more than by discipline or course.

@@ -1,6 +1,6 @@
 ---
 title: "Disagreement as Signal: Externalizing Tacit Knowledge through Ambient LLM Probing"
-cluster: society
+cluster: km
 area: "Knowledge management; organizational learning"
 stage: Proof of concept · gold labeling and evaluation pending
 oneLine: An ambient LLM that probes experts the moment they disagree, turning tacit judgment into reusable knowledge.

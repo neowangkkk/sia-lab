@@ -11,7 +11,7 @@ keyProposition: "LLM hosts interpret personality primarily as a signal of task f
 dataDescription: "375 controlled selection trials across five task categories using Claude Haiku 4.5: 150 neutral-host trials and 225 personality-assigned-host trials; six candidate archetypes; BFI-10 self-reports and blind Sonnet 5 ratings for manipulation checks."
 findings: "Personality strongly shaped selection. Neutral hosts chose openness for all creative tasks and conscientiousness for most other tasks (task × archetype Cramér’s V = .74); agreeable candidates were never selected. Self-similar choice was below chance (25/225 = 11.1%, p = .025), and chosen partners were farther from hosts than a random-choice benchmark (p < .0001), indicating complementarity rather than homophily."
 lastActivity: 2026-08
-order: 2
+order: 1
 ---
 
 Human partner choice is famously homophilous: people pick collaborators like themselves. We asked

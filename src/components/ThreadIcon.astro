@@ -1,26 +1,21 @@
 ---
 interface Props {
-  thread: 'empathy' | 'agents' | 'society';
+  thread: 'km' | 'agents' | 'education';
 }
 const { thread } = Astro.props;
 ---
-{thread === 'empathy' && (
-  <!-- Two forms leaning into each other — care -->
+{thread === 'km' && (
+  <!-- Concentric ripples — knowledge accumulating outward -->
   <svg viewBox="0 0 80 80" fill="none" class="w-16 h-16 mb-4" aria-hidden="true">
-    <defs>
-      <linearGradient id="ic-empathy" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#b56a3a" stop-opacity="0.35" />
-        <stop offset="100%" stop-color="#e8a87c" stop-opacity="0.2" />
-      </linearGradient>
-    </defs>
-    <ellipse cx="30" cy="42" rx="18" ry="22" fill="url(#ic-empathy)" transform="rotate(-10 30 42)" />
-    <ellipse cx="50" cy="42" rx="18" ry="22" fill="url(#ic-empathy)" transform="rotate(10 50 42)" />
-    <ellipse cx="40" cy="44" rx="10" ry="14" fill="#b56a3a" opacity="0.12" />
+    <circle cx="40" cy="40" r="8" fill="#b56a3a" opacity="0.2" />
+    <circle cx="40" cy="40" r="16" stroke="#b56a3a" stroke-width="1" opacity="0.2" />
+    <circle cx="40" cy="40" r="24" stroke="#d4856a" stroke-width="0.8" opacity="0.15" />
+    <circle cx="40" cy="40" r="32" stroke="#e8a87c" stroke-width="0.6" opacity="0.1" />
   </svg>
 )}
 
 {thread === 'agents' && (
-  <!-- Reaching hands/tendrils — coordination -->
+  <!-- Reaching tendrils — coordination -->
   <svg viewBox="0 0 80 80" fill="none" class="w-16 h-16 mb-4" aria-hidden="true">
     <defs>
       <linearGradient id="ic-agents" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -36,12 +31,17 @@ const { thread } = Astro.props;
   </svg>
 )}
 
-{thread === 'society' && (
-  <!-- Concentric ripples — outward impact -->
+{thread === 'education' && (
+  <!-- Two forms leaning into each other — teaching -->
   <svg viewBox="0 0 80 80" fill="none" class="w-16 h-16 mb-4" aria-hidden="true">
-    <circle cx="40" cy="40" r="8" fill="#b56a3a" opacity="0.2" />
-    <circle cx="40" cy="40" r="16" stroke="#b56a3a" stroke-width="1" opacity="0.2" />
-    <circle cx="40" cy="40" r="24" stroke="#d4856a" stroke-width="0.8" opacity="0.15" />
-    <circle cx="40" cy="40" r="32" stroke="#e8a87c" stroke-width="0.6" opacity="0.1" />
+    <defs>
+      <linearGradient id="ic-education" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#b56a3a" stop-opacity="0.35" />
+        <stop offset="100%" stop-color="#e8a87c" stop-opacity="0.2" />
+      </linearGradient>
+    </defs>
+    <ellipse cx="30" cy="42" rx="18" ry="22" fill="url(#ic-education)" transform="rotate(-10 30 42)" />
+    <ellipse cx="50" cy="42" rx="18" ry="22" fill="url(#ic-education)" transform="rotate(10 50 42)" />
+    <ellipse cx="40" cy="44" rx="10" ry="14" fill="#b56a3a" opacity="0.12" />
   </svg>
 )}

@@ -11,7 +11,7 @@ keyProposition: "Counterbalancing can yield an unbiased aggregate estimate witho
 dataDescription: "Study 1: 80 comparative-selection runs with two host models, four candidates per run, 320 candidate observations, 85 capability-calibration runs, 1,431 parsed absolute judge records, and 1,913 parsed pairwise judge records. Study 2: 480 isolated interviews with two hosts and eight candidates."
 findings: "Interview position remained associated with selection after full counterbalancing, but in opposite directions by host (Claude last-vs-first OR = 4.01, p = .019; GPT OR = 0.15, p = .013); the pooled effect was null (p = .93). Interview-position interaction was detected (p = .029), whereas final-menu position was not (p = .286). In isolated evaluation, family preference did not reach the preregistered threshold."
 lastActivity: 2026-08
-order: 3
+order: 2
 ---
 
 When an agent interviews candidates and then picks one, it is both the experimenter and the subject:

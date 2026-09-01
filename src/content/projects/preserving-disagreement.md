@@ -1,6 +1,6 @@
 ---
 title: "Preserving Disagreement in Human–AI Innovation: An LLM Multi-Agent Replay Study"
-cluster: agents
+cluster: km
 area: "Knowledge management; human–AI innovation"
 stage: Accepted · OUI 2026
 oneLine: Minority concerns that consensus discards validate at nearly the same rate as the ones it keeps.

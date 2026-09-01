@@ -4,7 +4,7 @@ const projects = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    cluster: z.enum(['empathy', 'agents', 'society']),
+    cluster: z.enum(['km', 'agents', 'education']),
     area: z.string().optional(),
     stage: z.string(),
     oneLine: z.string(),
