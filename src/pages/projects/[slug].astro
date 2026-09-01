@@ -19,11 +19,20 @@ const clusterLabel = {
   agents: 'Multi-Agent Coordination',
   society: 'AI & Society',
 }[project.data.cluster];
+
+const record = [
+  { label: 'Idea', value: project.data.idea },
+  { label: 'Research question', value: project.data.researchQuestion },
+  { label: 'Key proposition', value: project.data.keyProposition },
+  { label: 'Data', value: project.data.dataDescription },
+  { label: 'What we found', value: project.data.findings },
+].filter((f) => f.value);
 ---
 <Base title={`${project.data.title} · Social Intelligence & AI Lab`}>
   <article class="max-w-3xl mx-auto px-6 pt-24 pb-20">
     <p class="text-xs uppercase tracking-widest text-accent mb-4">
       <a href={`${base}/research`} class="hover:!text-ink">{clusterLabel}</a>
+      {project.data.area && <span class="text-muted"> &middot; {project.data.area}</span>}
     </p>
     <h1 class="font-display text-4xl md:text-5xl leading-tight">{project.data.title}</h1>
     <p class="mt-6 text-lg text-muted leading-relaxed">{project.data.oneLine}</p>
@@ -56,6 +65,20 @@ const clusterLabel = {
     <div class="mt-12 text-base leading-relaxed text-ink/85">
       <Content />
     </div>
+
+    {record.length > 0 && (
+      <section class="mt-14 border-t border-rule pt-10">
+        <h2 class="font-display text-2xl mb-8">The record</h2>
+        <dl class="space-y-8">
+          {record.map((f) => (
+            <div>
+              <dt class="text-xs uppercase tracking-widest text-accent mb-2">{f.label}</dt>
+              <dd class="text-base leading-relaxed text-ink/85">{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    )}
 
     <p class="mt-16 text-sm">
       <a href={`${base}/research`}>&larr; All research</a>

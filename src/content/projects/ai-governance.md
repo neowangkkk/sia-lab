@@ -1,15 +1,26 @@
 ---
-title: AI in the Syllabus
+title: 'Same Course, Different Rules'
 cluster: society
-stage: Data collection · sourcing syllabi
-oneLine: How GenAI policy shows up in university syllabi (240 UofT courses and counting).
-whyMatters: Universities are setting de facto GenAI policy not in central documents but in individual syllabi, and almost no one is tracking it. Building the first systematic corpus of how instructors actually govern AI use gives administrators evidence rather than anecdote when policy is revised.
-lastActivity: 2026-05
+area: AI governance; higher education
+stage: Analysis complete · drafting
+oneLine: 1,836 syllabi show GenAI rules are set by instructor judgment more than by discipline or course.
+whyMatters: Universities that decline to set central GenAI policy have not avoided making one — they have delegated it to instructors, and the resulting rules are where students actually encounter governance. Locating the variation tells administrators whether the fix is disciplinary guidance, course-level coordination, or nothing short of engaging individual instructors.
+idea: Use within-discipline and within-course comparisons to locate where decentralized university AI policy variation originates — disciplinary context, course context, or stable instructor judgment.
+researchQuestion: When universities delegate generative-AI policy to instructors, how much policy variation is explained by discipline and course context, and how much persists at the instructor level?
+keyProposition: Discipline shapes whether instructors state an AI rule at all but explains little about what the rule permits. Courses constrain policy variation, yet stable instructor-level judgments sustain substantial differences even within the same course.
+dataDescription: 1,836 coded syllabi from ten departments at one large public university, Summer 2023 through Winter 2026, with instructors identified for 99.1%. Analyses include logistic and multinomial models, multilevel variance decomposition, pairwise disagreement measures, permutation nulls, and 508 within-instructor/course transitions.
+findings: Discipline and department explained 19.5% of whether a rule was stated but only 1.4% of stated strictness. The instructor component accounted for 68.4% of strictness variance, though this is an upper bound because course is not nested. Instructors teaching the same course disagreed in 43.5–48.2 pairs per 100 against a 70.0 corpus baseline — real constraint, but substantial disagreement remained. When a rule appeared in consecutive years, the same instructor held the same stance 76.3% of the time versus 30.0% under independence.
+lastActivity: 2026-08
 order: 1
 ---
 
-We study how universities are governing generative AI at the classroom level — not through
-top-down policy documents, but through the language instructors put in syllabi. An ongoing sample
-of 240 University of Toronto courses forms the baseline.
+Most universities responded to generative AI by delegating the decision downward: set your own course
+policy. That is a governance choice, and this project measures what it produced at one large public
+university across three years and ten departments.
 
-_Full project write-up coming soon._
+Discipline turns out to govern whether an instructor says anything about AI at all, but almost nothing
+about what the rule permits once stated. The strictness of a policy is overwhelmingly an
+instructor-level property, and a stable one — the same instructor teaching the same course in
+consecutive years keeps the same stance far more often than chance. Two students in different sections
+of one course can therefore face genuinely different rules, not because the discipline or the material
+differs, but because their instructors hold durable and divergent views about what AI use means.
