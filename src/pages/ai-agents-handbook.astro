@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const pdf = `${base}/downloads/ai-agents-handbook.pdf`;
+const qr = `${base}/downloads/ai-agents-handbook-qr.png`;
+---
+<Base
+  title="AI Agents 实操手册：简明参考 · SIA Lab"
+  description="AI Agents 实操手册：生活与个人事务 · 24 个实用例子与简要提醒。作者 Tao Wang，2026 年 10 月版。PDF 免费下载。"
+  lang="zh-CN"
+  showFooter={false}
+>
+  <section class="max-w-3xl mx-auto px-6 pt-24 pb-24">
+    <p class="text-xs uppercase tracking-widest text-accent mb-4">资料下载</p>
+    <h1 class="font-display text-4xl md:text-5xl leading-tight">AI Agents 实操手册：简明参考</h1>
+    <p class="mt-4 text-lg text-muted">生活与个人事务 · 24 个实用例子与简要提醒</p>
+
+    <p class="mt-8 text-lg leading-relaxed">
+      看看 AI agent 能帮你做什么，从一件小事开始：这本简明手册用 24 个日程、邮件、旅行、账单、文件整理等生活中的实用例子，配上简要的安全提醒，帮你上手 AI 助理。
+    </p>
+
+    <p class="mt-6 text-sm text-muted">作者：Tao Wang &middot; 2026年10月版 &middot; PDF，共 9 页</p>
+
+    <div class="mt-10">
+      <a
+        href={pdf}
+        download="AI-Agents-实操手册.pdf"
+        class="inline-flex items-center gap-2 bg-accent !text-paper px-8 py-4 rounded-soft text-base font-medium hover:shadow-hover hover:-translate-y-0.5"
+      >
+        下载 PDF 手册
+      </a>
+    </div>
+
+    <div class="mt-14 bg-warm rounded-soft p-8 flex flex-col items-center text-center">
+      <img
+        src={qr}
+        alt="扫码下载 AI Agents 实操手册 PDF"
+        width="260"
+        height="260"
+        class="w-64 h-64 bg-white rounded-soft"
+      />
+      <p class="mt-4 font-display text-lg">扫码下载</p>
+      <p class="mt-1 text-sm text-muted">用手机相机扫描二维码，即可打开或下载 PDF</p>
+    </div>
+  </section>
+</Base>
