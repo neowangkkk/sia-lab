@@ -10,7 +10,6 @@ Do AI agents help high school students learn and grow, or do they quietly do the
 - **Duration:** November 15, 2026 to February 2027 (4 months)
 - **Commitment:** about 6 hours per week, plus a 2-hour team meeting every two weeks (online or in person)
 - **Positions:** 2 students
-- **Sponsorship contribution:** CAD $3,000 to the lab, supporting research labor and AI token costs for the project
 - **Application deadline:** November 10
 - **Selection:** shortlisted applicants are interviewed; positions are offered only after a successful interview
 
