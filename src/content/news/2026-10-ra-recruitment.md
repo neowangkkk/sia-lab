@@ -7,11 +7,11 @@ Do AI agents help high school students learn and grow, or do they quietly do the
 
 ### At a glance
 
-- **Duration:** November 2026 to February 2027 (4 months)
+- **Duration:** November 15, 2026 to February 2027 (4 months)
 - **Commitment:** about 6 hours per week, plus a 2-hour team meeting every two weeks (online or in person)
 - **Positions:** 2 students
 - **Sponsorship contribution:** CAD $3,000 to the lab, supporting research labor and AI token costs for the project
-- **Application deadline:** October 30
+- **Application deadline:** November 10
 - **Selection:** shortlisted applicants are interviewed; positions are offered only after a successful interview
 
 ### What you will do
@@ -37,7 +37,7 @@ Do AI agents help high school students learn and grow, or do they quietly do the
 
 ### How to apply
 
-Send a short application to [hello@sialab.org](mailto:hello@sialab.org) by **October 30**. Please include:
+Send a short application to [hello@sialab.org](mailto:hello@sialab.org) by **November 10**. Please include:
 
 - Your name, grade, school, and contact information
 - A short statement of about 200 words on why this topic interests you
